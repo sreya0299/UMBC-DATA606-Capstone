@@ -47,8 +47,8 @@ It involves natural language processing (NLP) and machine learning to perform ta
 | **Column Name** | **Data Type** | **Definition** | **Values**                            |
 |-----------------|---------------|----------------|---------------------------------------|
 | category        | string        | The field that the resume corresponds to, It indicates the type of job the resume is targeting.  | Java Developer, Operations Manager, Data Science, Testing etc. |
-| Resume          | string        | The textual content of the resume contains the complete resume of an individual in raw text format, including their skills, education, experience, personal deatils etc.     | NA 
-                                    |
+| Resume          | string        | The textual content of the resume contains the complete resume of an individual in raw text format, including their skills, education, experience, personal deatils etc.     | NA |
+
 **Target/Label**:
 
 **Category**: It is used as the **target** variable for classification tasks in which the model will attempt to predict the appropriate job category based on the content of the resume.
