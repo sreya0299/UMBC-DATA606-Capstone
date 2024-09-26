@@ -58,18 +58,18 @@ This Project analyzes resumes to extract key details like skills, experience, an
 **Resume**: It contains the text of the resumes and is the **feature**. It is the input data that will be processed to extract relevant information (skills, experience, education etc.) to predict the target category.
 The in-depth features that are extracted from each resume are:
 * **Skills**:
-  * Technical Skills: Programming languages (e.g., Python, Java), tools (e.g., Power BI, Tableau), and technologies (e.g., AWS, Azure).
-  * Soft Skills: Communication, leadership, teamwork, problem-solving.
+  * **Technical Skills**: Programming languages (e.g., Python, Java), tools (e.g., Power BI, Tableau), and technologies (e.g., AWS, Azure).
+  * **Soft Skills**: Communication, leadership, teamwork, problem-solving.
 * **Education**:
-  * Degree Level: Bachelor’s, Master’s, Ph.D.
-  * Field of Study: Computer Science, Engineering, Finance, etc.
-  * Institutions: Name of the universities or schools attended.
-  * Graduation Year: Year the degree was completed.
+  * **Degree Level**: Bachelor’s, Master’s, Ph.D.
+  * **Field of Study**: Computer Science, Engineering, Finance, etc.
+  * **Institutions**: Name of the universities or schools attended.
+  * **Graduation Year**: Year the degree was completed.
 * **Professional Experience**:
-  * Job Titles: Positions held (e.g., Data Analyst, Software Engineer).
-  * Years of Experience: The total number of years or specific time periods of work.
-  * Companies: Names of companies or organizations where the individual worked.
-  * Job Responsibilities: The tasks performed in each role.
+  * **Job Titles**: Positions held (e.g., Data Analyst, Software Engineer).
+  * **Years of Experience**: The total number of years or specific time periods of work.
+  * **Companies**: Names of companies or organizations where the individual worked.
+  * **Job Responsibilities**: The tasks performed in each role.
 * **Keywords and Phrases**:
   * Specific industry-related terms that are commonly found in job descriptions and are required for matching (e.g., "Machine Learning," "Data Analysis," "Project Management", "Big Data").
 
