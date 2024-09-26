@@ -1,10 +1,10 @@
-# Resume Insights and Recommendations
+# Resume Insights and Optimization
 
 ![Resume_Insights](resume_img.jpg)
 
 ## 1. Title and Author
 
-* **Project Title**: Resume Insights and Recommendations
+* **Project Title**: Resume Insights and Optimization
 * **Prepared for**: UMBC Data Science Master Degree Capstone by Dr. Chaojie (Jay) Wang
 * **Author Name**: Sreya Sree Siloju
 * **GitHub Repository**: [GitHub Repo](https://github.com/sreya0299)
