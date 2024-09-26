@@ -78,5 +78,6 @@ The in-depth features that are extracted from each resume are:
 * Text is converted into numericals using **TFID Vectorizer**, **KNeighborsClassifier** and **OneVsRestClassifier** are used for classification of the resume into it's category as there are multiple classes in the target variable.
 * Machine Learning Packages are used for model training and model predicting to which the resume belongs to which helps in identifyinng the skills responsible for each category. 
 * By using **NLTK**, the resume text is processed and cleaned, ensuring better input for further tasks like feature extraction and classification.
+* **NLP** concepts like Named Entity Recognition (NER) are used for identifying the key words from the resume like skills, experience, technologies worked on etc.
 * **Streamlit** is used for creating a web interface for evaluating the resume with provided job description.
 ---
