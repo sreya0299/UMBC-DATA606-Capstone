@@ -51,9 +51,9 @@ It involves natural language processing (NLP) and machine learning to perform ta
 
 **Target/Label**:
 
-**Category**: It is used as the **target** variable for classification tasks in which the model will attempt to predict the appropriate job category based on the content of the resume.
+1. **Category**: It is used as the **target** variable for classification tasks in which the model will attempt to predict the appropriate job category based on the content of the resume.
 
-**Feature/Predictors**:
+2. **Feature/Predictors**:
 **Resume**: It contains the text of the resumes and is the **feature**. It is the input data that will be processed to extract relevant information (skills, experience, education etc.) to predict the target category.
 The in-depth features that are extracted from each resume are:
 * **Skills**:
@@ -75,6 +75,7 @@ The in-depth features that are extracted from each resume are:
 **Packages and Technologies**:
 * Backend Development using **Python** programming language
 * Text is converted into numericals using **TFID Vectorizer**, **KNeighborsClassifier** and **OneVsRestClassifier** are used for classification of the resume into it's category as there are multiple classes in the target variable.
+* Machine Learning Packages are used for model training and model predicting to which the resume belongs to which helps in identifyinng the skills responsible for each category. 
 * By using **NLTK**, the resume text is processed and cleaned, ensuring better input for further tasks like feature extraction and classification.
 * **Streamlit** is used for creating a web interface for evaluating the resume with provided job description.
 
