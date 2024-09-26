@@ -11,12 +11,13 @@
 * **LinkedIn Profile**: [LinkedIn Profile](https://www.linkedin.com/in/sreya-sree-siloju-a29224149/)
 * **PowerPoint Presentation**: PowerPoint Presentation
 * **YouTube Video**: YouTube Video
+  
+---
 
 ## 2. Background
 
 ### What is it About?
-This Project analyzes resumes to extract key details like skills, experience, and education. It offers suggestions for improving the resume by identifying missing skills, enhancing readability, and matching it to job descriptions. The system may also recommend relevant job positions and provide feedback to make resumes more ATS-compliant.
-It involves natural language processing (NLP) and machine learning to perform tasks like resume parsing, skill matching, and personalized job recommendations. It helps job seekers optimize their resumes for specific roles.
+This Project analyzes resumes to extract key details like skills, experience, and education. It offers suggestions for improving the resume by identifying missing skills, enhancing readability, and matching it to job descriptions. The system may also recommend relevant job positions and provide feedback to make resumes more ATS-compliant. It involves natural language processing (NLP) and machine learning to perform tasks like resume parsing, skill matching, and personalized job recommendations. It helps job seekers optimize their resumes for specific roles.
 
 ### Why Does it Matter?
 1. **Improves Resume Shortlisting**: It allows candidates to tailor their resumes to specific job descriptions by recommending skills or qualifications they may lack, increasing their chances of aligning with job description.
@@ -78,4 +79,4 @@ The in-depth features that are extracted from each resume are:
 * Machine Learning Packages are used for model training and model predicting to which the resume belongs to which helps in identifyinng the skills responsible for each category. 
 * By using **NLTK**, the resume text is processed and cleaned, ensuring better input for further tasks like feature extraction and classification.
 * **Streamlit** is used for creating a web interface for evaluating the resume with provided job description.
-
+---
