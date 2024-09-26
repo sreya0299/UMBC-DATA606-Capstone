@@ -1,5 +1,7 @@
 # Resume Insights and Recommendations
 
+![Resume_Insights](resume_img.jpg)
+
 ## 1. Title and Author
 
 * **Project Title**: Resume Insights and Recommendations
@@ -9,8 +11,6 @@
 * **LinkedIn Profile**: [LinkedIn Profile](https://www.linkedin.com/in/sreya-sree-siloju-a29224149/)
 * **PowerPoint Presentation**: PowerPoint Presentation
 * **YouTube Video**: YouTube Video
-
----
 
 ## 2. Background
 
@@ -44,7 +44,37 @@ It involves natural language processing (NLP) and machine learning to perform ta
 
 ### Data Dictionary:
 
-| **Column Name** | **Data Type** | **Definition** |
-|-----------------|---------------|----------------|
-| category        | string        | Provides the job category of each resume | 
-| Resume          | string        | Gives the content of the resume of each individual | 
+| **Column Name** | **Data Type** | **Definition** | **Values**                            |
+|-----------------|---------------|----------------|---------------------------------------|
+| category        | string        | The field that the resume corresponds to, It indicates the type of job the resume is targeting.  | Java Developer, Operations Manager, Data Science, Testing etc. |
+| Resume          | string        | The textual content of the resume contains the complete resume of an individual in raw text format, including their skills, education, experience, personal deatils etc.     | NA 
+                                    |
+**Target/Label**:
+
+**Category**: It is used as the **target** variable for classification tasks in which the model will attempt to predict the appropriate job category based on the content of the resume.
+
+**Feature/Predictors**:
+**Resume**: It contains the text of the resumes and is the **feature**. It is the input data that will be processed to extract relevant information (skills, experience, education etc.) to predict the target category.
+The in-depth features that are extracted from each resume are:
+* **Skills**:
+* * Technical Skills: Programming languages (e.g., Python, Java), tools (e.g., Power BI, Tableau), and technologies (e.g., AWS, Azure).
+  * Soft Skills: Communication, leadership, teamwork, problem-solving.
+* **Education**:
+* * Degree Level: Bachelor’s, Master’s, Ph.D.
+  * Field of Study: Computer Science, Engineering, Finance, etc.
+  * Institutions: Name of the universities or schools attended.
+  * Graduation Year: Year the degree was completed.
+* **Professional Experience**:
+* * Job Titles: Positions held (e.g., Data Analyst, Software Engineer).
+  * Years of Experience: The total number of years or specific time periods of work.
+  * Companies: Names of companies or organizations where the individual worked.
+  * Job Responsibilities: The tasks performed in each role.
+* **Keywords and Phrases**:
+* * Specific industry-related terms that are commonly found in job descriptions and are required for matching (e.g., "Machine Learning," "Data Analysis," "Project Management", "Big Data").
+
+**Packages and Technologies**
+* Backend Development using **Python** programming language
+* Text is converted into numericals using **TFID Vectorizer**, **KNeighborsClassifier** and **OneVsRestClassifier** are used for classification of the resume into it's category as there are multiple classes in the target variable.
+* By using **NLTK**, the resume text is processed and cleaned, ensuring better input for further tasks like feature extraction and classification.
+* **Streamlit** is used for creating a web interface for evaluating the resume with provided job description.
+
