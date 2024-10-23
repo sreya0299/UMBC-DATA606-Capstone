@@ -221,6 +221,7 @@ The in-depth features that are extracted from each resume are:
 ![Most_freq_words_in_dataset_category](most_freq_words_in_df_category.png)
 
 * **Labelling the categories**
+  
   The process described involves converting categorical data into a numerical format suitable for machine learning models.
   * **Categorical Data Conversion**: The *LabelEncoder* is used to transform string labels representing different categories into numerical labels. This is essential because many machine learning algorithms require numerical input.
   * **Learning Unique Categories**: The method analyzes the unique categories present in the dataset, enabling it to understand how to assign numerical values to each category.
