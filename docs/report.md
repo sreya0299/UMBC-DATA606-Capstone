@@ -102,15 +102,118 @@ The in-depth features that are extracted from each resume are:
 ---
 ## 4. Exploratory Data Analysis (EDA)
 
-1. **Merging Datasets** : The four datasets are merged using *concat* function of *pandas* method. The new dataset contains 11003 rows and 2 columns. Each row representing a unique resume corresponding to the category which it belongs to.
-2. **Checking for NUll/Missing values** : The entire dataset is checked for *NULL* or *Missing* values using *isna()* function. The result obtained is that there are no null values in the dataset and handling them can be ommitted.
-3. **Statistics of Dataset** : The summary of the dataframe is obtained using *describe(include='all')* function. It gives the count of the categories and resumes presnt in the dataset which is 11003, gives the unique number of values of the same which is 65 and 11003 respectively. Apart from this, it also provides the information about what is the most frequent data in the given dataset along with it's frequency.
-4. **Distribution of Categories**: The number of unique categories present in the dataset are 65. Each of the category is distributed non-uniformly. The distribution of each category is displayed using *plotly express*.
+1. **Merging Datasets** : To consolidate data for analysis, utilized the concat function from the pandas library to merge four distinct datasets. This operation resulted in a unified dataset containing 11,003 rows and 2 columns. Each row represents a unique resume, and each resume is categorized according to its specific category. This structured format facilitates further analysis, allowing to explore the relationships and distributions of resumes across different categories effectively.
+2. **Checking for NUll/Missing values** : The integrity of the dataset is crucial for accurate analysis. Conducted a thorough examination for any NULL or missing values using the *isna()* function. The outcome of this analysis revealed that there are no missing values within the dataset. Consequently, proceeded with the analysis without the need to address any missing data, ensuring that findings are based on a complete dataset.
+3. **Statistics of Dataset** : To gain insights into the dataset’s composition, employed the *describe(include='all')* function. This summary statistic provides a comprehensive overview of the dataset, including:
+  * Count: The total number of records, which is 11,003.
+  * Unique Values: The total number of distinct categories present in the dataset, totaling 65 unique categories.
+  * Most Frequent Data: The function also identifies the most frequently occurring data points, presenting their respective frequencies. This information is invaluable as it highlights the dominant categories and resume types, guiding focus for further exploration and analysis.
+4. **Distribution of Categories**: Analyzing the distribution of the categories is essential to understand how the resumes are spread across different categories. Dataset includes 65 unique categories, and the distribution is not uniform. Some categories may contain a significantly higher number of resumes compared to others, indicating possible trends or preferences in resume submissions. Utilized *Plotly Express* to visually represent this distribution, creating interactive plots that illustrate the frequency of resumes within each category. This visual exploration aids in identifying categories that may require deeper analysis or consideration for future projects.
+  
+* **Categories with frequency**
+  
+| **Category**    | **Count** |
+|-----------------|---------------|
+|	Python_Developer	|	1278	      |
+|	Java_Developer	|	1206	|
+|	Web_Developer	|	968	|
+|	Database_Administrator	|	920	|
+|	Security_Analyst	|	875	|
+|	Systems_Administrator	|	769	|
+|	Project_manager	|	722	|
+|	Front_End_Developer	|	523	|
+|	Network_Administrator	|	469	|
+|	Software_Developer	|	437	|
+|	BUSINESS-DEVELOPMENT	|	120	|
+|	INFORMATION-TECHNOLOGY	|	120	|
+|	HR	|	120	|
+|	ENGINEERING	|	118	|
+|	CHEF	|	118	|
+|	ADVOCATE	|	118	|
+|	ACCOUNTANT	|	118	|
+|	FINANCE	|	117	|
+|	FITNESS	|	117	|
+|	SALES	|	116	|
+|	AVIATION	|	116	|
+|	BANKING	|	115	|
+|	CONSULTANT	|	115	|
+|	HEALTHCARE	|	115	|
+|	CONSTRUCTION	|	112	|
+|	PUBLIC-RELATIONS	|	111	|
+|	DESIGNER	|	107	|
+|	ARTS	|	103	|
+|	TEACHER	|	102	|
+|	APPAREL	|	97	|
+|	DIGITAL-MEDIA	|	96	|
+|	AGRICULTURE	|	63	|
+|	AUTOMOBILE	|	36	|
+|	Full Stack Developer	|	30	|
+|	Data Scientist	|	29	|
+|	Python Developer	|	28	|
+|	Frontend Developer	|	24	|
+|	Mobile App Developer (iOS/Android)	|	23	|
+|	Cloud Engineer	|	23	|
+|	BPO	|	22	|
+|	Backend Developer	|	19	|
+|	Machine Learning Engineer	|	18	|
+|	Java Developer	|	13	|
+|	Database	|	11	|
+|	Advocate	|	10	|
+|	Data Science	|	10	|
+|	DotNet Developer	|	7	|
+|	DevOps Engineer	|	7	|
+|	Automation Testing	|	7	|
+|	Hadoop	|	7	|
+|	Testing	|	7	|
+|	Health and fitness	|	6	|
+|	Business Analyst	|	6	|
+|	Arts	|	6	|
+|	Civil Engineer	|	6	|
+|	SAP Developer	|	6	|
+|	Blockchain	|	5	|
+|	Sales	|	5	|
+|	ETL Developer	|	5	|
+|	Mechanical Engineer	|	5	|
+|	Network Security Engineer	|	5	|
+|	Electrical Engineering	|	5	|
+|	Web Designing	|	4	|
+|	Operations Manager	|	4	|
+|	PMO	|	3	|
 
+  
 * **Bar Graph Distribution**
-  * It displays that *Python Developer* is more dominant when compared to the other categories. Therefore it might affect the accuracy of the model while classifying and the least dominant category is *Web Designing*, therefore it might be a problem for the model to detect a web designing categorized resume because only a few resumes have been trained on the model.
+  * Dominant Category: *Python Developer* stands out as the most frequent category, making up a significant portion of the dataset. This dominance may lead to a bias, affecting the model's accuracy in classifying other categories.
+  * Least Dominant Category: In contrast, *PMO* is the least represented category, posing challenges for the model due to the limited training examples available.
 ![Bar_Graph](Bar_graph.png)
 
 * **Pie Chart Distribution**
-  * It gives the distribution of the categories in terms of percentage. *Python Developer* occupies 11.6% of the entire dataset which is about 1276 resumes of 11003 resumes where as *Web Designing* only occupies 0.0273% which is nearly 5 resumes.
+  * Percentage Representation: *Python Developer* comprises 11.6% (about 1,276 resumes) of the total 11,003 resumes, reinforcing its dominance.
+  * Minor Categories: The *PMO* category accounts for only 0.0273% (around 2 resumes), highlighting the difficulties the model may face in accurately classifying such underrepresented categories.
 ![Pie_Chart](Pie_chart.png)
+
+### Preporocessing Data
+
+* **Cleaning the Resume**
+
+  The *cleanResume* function serves as a crucial preprocessing step for analyzing resume text data. By systematically removing unnecessary elements, it enhances the quality of the input data for further processing, such as feature extraction, classification, and machine learning model training. This function is particularly valuable in scenarios where clean and structured text data is essential for generating insights and making accurate predictions in resume analysis and related fields.
+  * **URL Removal**: Any web links present in the resume text are eliminated to focus on the content.
+  * **Social Media Elements**: Mentions of retweets (RT) and carbon copies (CC), along with hashtags and user handles (e.g., @username), are removed to maintain a professional tone.
+  * **Special Character Elimination**: Non-essential special characters are stripped away, helping to standardize the text and reduce noise.
+  * **Non-ASCII Character Removal**: Characters outside the standard ASCII range are removed to ensure compatibility with various text processing tools.
+  * **Whitespace Normalization**: Extra spaces, tabs, and newline characters are consolidated into single spaces, resulting in a cleaner layout.
+  * **Alphanumeric Filtering**: Only letters, numbers, and spaces are retained, removing any irrelevant punctuation or symbols.
+  * **Final Space Reduction**: Multiple consecutive spaces are replaced with a single space, enhancing the readability of the text.
+
+* **Extracting the most frequent words**
+  
+  The *get_most_frequent_words* function is used to analyze a collection of resumes and identify the most commonly occurring words within that text. It serves purposes:
+  * **Text Analysis**: By examining the frequency of words, the function helps highlight important skills, qualifications, and experiences presented in the resumes.
+  * **Stop Word Removal**: It filters out common English words (like "and," "the," and "is") that do not provide significant information, focusing instead on more meaningful terms that reflect the candidates' competencies.
+  * **Customization**: Users can specify additional words to exclude from the analysis, allowing for tailored results based on the context of the resumes being analyzed.
+  * **Insights Generation**: The function counts the occurrences of filtered words and returns the most frequent ones, which can inform hiring decisions, identify trends in candidate skills, or enhance resume parsing systems.
+
+**Most frequent words obtained from entire dataset**
+![Most_freq_words_in_dataset](Pie_chart.png)
+
+**Most frequent words obtained from dataset with categories**
+![Most_freq_words_in_dataset_category](Pie_chart.png)
