@@ -104,37 +104,38 @@ The in-depth features that are extracted from each resume are:
 
 1. **Merging Datasets** : To consolidate data for analysis, utilized the concat function from the pandas library to merge four distinct datasets. This operation resulted in a unified dataset containing 11,003 rows and 2 columns. Each row represents a unique resume, and each resume is categorized according to its specific category. This structured format facilitates further analysis, allowing to explore the relationships and distributions of resumes across different categories effectively.
 2. **Checking for NUll/Missing values** : The integrity of the dataset is crucial for accurate analysis. Conducted a thorough examination for any NULL or missing values using the *isna()* function. The outcome of this analysis revealed that there are no missing values within the dataset. Consequently, proceeded with the analysis without the need to address any missing data, ensuring that findings are based on a complete dataset.
-3. **Statistics of Dataset** : To gain insights into the dataset’s composition, employed the *describe(include='all')* function. This summary statistic provides a comprehensive overview of the dataset, including:
+3. 4. **Identifying the duplicates**: Standardizes various representations of the same category by mapping them to a consistent label, such as consolidating *Python_Developer* and *Python Developer* into *Python Developer* and same with the *Java_Developer* and remaining categories. This enhances clarity, facilitates analysis, and reduces redundancy in the dataset, making it easier to work with and maintain as new variations are identified.
+4. **Statistics of Dataset** : To gain insights into the dataset’s composition, employed the *describe(include='all')* function. This summary statistic provides a comprehensive overview of the dataset, including:
   * Count: The total number of records, which is 11,003.
-  * Unique Values: The total number of distinct categories present in the dataset, totaling 65 unique categories.
+  * Unique Values: The total number of distinct categories present in the dataset, totaling 62 unique categories.
   * Most Frequent Data: The function also identifies the most frequently occurring data points, presenting their respective frequencies. This information is invaluable as it highlights the dominant categories and resume types, guiding focus for further exploration and analysis.
-4. **Distribution of Categories**: Analyzing the distribution of the categories is essential to understand how the resumes are spread across different categories. Dataset includes 65 unique categories, and the distribution is not uniform. Some categories may contain a significantly higher number of resumes compared to others, indicating possible trends or preferences in resume submissions. Utilized *Plotly Express* to visually represent this distribution, creating interactive plots that illustrate the frequency of resumes within each category. This visual exploration aids in identifying categories that may require deeper analysis or consideration for future projects.
+5. **Distribution of Categories**: Analyzing the distribution of the categories is essential to understand how the resumes are spread across different categories. Dataset includes 65 unique categories, and the distribution is not uniform. Some categories may contain a significantly higher number of resumes compared to others, indicating possible trends or preferences in resume submissions. Utilized *Plotly Express* to visually represent this distribution, creating interactive plots that illustrate the frequency of resumes within each category. This visual exploration aids in identifying categories that may require deeper analysis or consideration for future projects.
   
 * **Categories with frequency**
   
 | **Category**    | **Count** |
 |-----------------|---------------|
-|	Python_Developer	|	1278	      |
-|	Java_Developer	|	1206	|
-|	Web_Developer	|	968	|
+|	Python Developer	|	1371	|
+|	Java Developer	|	1326	|
+|	Web Developer	|	984	|
 |	Database_Administrator	|	920	|
-|	Security_Analyst	|	875	|
-|	Systems_Administrator	|	769	|
+|	Security_Analyst	|	876	|
+|	Systems_Administrator	|	776	|
 |	Project_manager	|	722	|
-|	Front_End_Developer	|	523	|
+|	Front End Developer	|	584	|
 |	Network_Administrator	|	469	|
 |	Software_Developer	|	437	|
+|	HR	|	154	|
 |	BUSINESS-DEVELOPMENT	|	120	|
 |	INFORMATION-TECHNOLOGY	|	120	|
-|	HR	|	120	|
+|	ACCOUNTANT	|	118	|
 |	ENGINEERING	|	118	|
+|	FINANCE	|	118	|
 |	CHEF	|	118	|
 |	ADVOCATE	|	118	|
-|	ACCOUNTANT	|	118	|
-|	FINANCE	|	117	|
 |	FITNESS	|	117	|
+|	AVIATION	|	117	|
 |	SALES	|	116	|
-|	AVIATION	|	116	|
 |	BANKING	|	115	|
 |	CONSULTANT	|	115	|
 |	HEALTHCARE	|	115	|
@@ -145,50 +146,47 @@ The in-depth features that are extracted from each resume are:
 |	TEACHER	|	102	|
 |	APPAREL	|	97	|
 |	DIGITAL-MEDIA	|	96	|
+|	Testing	|	70	|
 |	AGRICULTURE	|	63	|
+|	Backend Developer	|	57	|
+|	Cloud Engineer	|	56	|
+|	DevOps Engineer	|	55	|
+|	Data Scientist	|	53	|
+|	Full Stack Developer	|	47	|
+|	Web Designing	|	45	|
+|	Mobile App Developer (iOS/Android)	|	45	|
+|	Machine Learning Engineer	|	43	|
+|	Hadoop	|	42	|
+|	Data Science	|	40	|
+|	Mechanical Engineer	|	40	|
+|	Blockchain	|	40	|
+|	Sales	|	40	|
+|	Operations Manager	|	40	|
+|	ETL Developer	|	40	|
 |	AUTOMOBILE	|	36	|
-|	Full Stack Developer	|	30	|
-|	Data Scientist	|	29	|
-|	Python Developer	|	28	|
-|	Frontend Developer	|	24	|
-|	Mobile App Developer (iOS/Android)	|	23	|
-|	Cloud Engineer	|	23	|
+|	Arts	|	36	|
+|	Database	|	33	|
+|	Health and fitness	|	30	|
+|	PMO	|	30	|
+|	Electrical Engineering	|	30	|
+|	Business Analyst	|	28	|
+|	DotNet Developer	|	28	|
+|	Automation Testing	|	26	|
+|	Network Security Engineer	|	25	|
+|	Civil Engineer	|	24	|
+|	SAP Developer	|	24	|
 |	BPO	|	22	|
-|	Backend Developer	|	19	|
-|	Machine Learning Engineer	|	18	|
-|	Java Developer	|	13	|
-|	Database	|	11	|
-|	Advocate	|	10	|
-|	Data Science	|	10	|
-|	DotNet Developer	|	7	|
-|	DevOps Engineer	|	7	|
-|	Automation Testing	|	7	|
-|	Hadoop	|	7	|
-|	Testing	|	7	|
-|	Health and fitness	|	6	|
-|	Business Analyst	|	6	|
-|	Arts	|	6	|
-|	Civil Engineer	|	6	|
-|	SAP Developer	|	6	|
-|	Blockchain	|	5	|
-|	Sales	|	5	|
-|	ETL Developer	|	5	|
-|	Mechanical Engineer	|	5	|
-|	Network Security Engineer	|	5	|
-|	Electrical Engineering	|	5	|
-|	Web Designing	|	4	|
-|	Operations Manager	|	4	|
-|	PMO	|	3	|
+|	Advocate	|	20	|
 
   
 * **Bar Graph Distribution**
   * Dominant Category: *Python Developer* stands out as the most frequent category, making up a significant portion of the dataset. This dominance may lead to a bias, affecting the model's accuracy in classifying other categories.
-  * Least Dominant Category: In contrast, *PMO* is the least represented category, posing challenges for the model due to the limited training examples available.
+  * Least Dominant Category: In contrast, *Advocate* is the least represented category, posing challenges for the model due to the limited training examples available.
 ![Bar_Graph](Bar_graph.png)
 
 * **Pie Chart Distribution**
-  * Percentage Representation: *Python Developer* comprises 11.6% (about 1,276 resumes) of the total 11,003 resumes, reinforcing its dominance.
-  * Minor Categories: The *PMO* category accounts for only 0.0273% (around 2 resumes), highlighting the difficulties the model may face in accurately classifying such underrepresented categories.
+  * Percentage Representation: *Python Developer* comprises 11.3% (about 1,371 resumes) of the total 11,003 resumes, reinforcing its dominance.
+  * Minor Categories: The *Advocate* category accounts for only 0.166% (around 20 resumes), highlighting the difficulties the model may face in accurately classifying such underrepresented categories.
 ![Pie_Chart](Pie_chart.png)
 
 ### Preporocessing Data
@@ -231,58 +229,55 @@ The in-depth features that are extracted from each resume are:
 
 |Category|Label|
 |--------|-----|
-|	Python_Developer	|	54	|
-|	Java_Developer	|	43	|
-|	Front_End_Developer	|	34	|
-|	Network_Administrator	|	48	|
-|	Project_manager	|	52	|
-|	Security_Analyst	|	58	|
-|	Software_Developer	|	59	|
-|	Systems_Administrator	|	60	|
-|	Web_Developer	|	64	|
+|	Python Developer	|	51	|
+|	Java Developer	|	41	|
+|	Front End Developer	|	34	|
+|	Network_Administrator	|	46	|
+|	Project_manager	|	50	|
+|	Security_Analyst	|	55	|
+|	Software_Developer	|	56	|
+|	Systems_Administrator	|	57	|
+|	Web Developer	|	61	|
 |	Database_Administrator	|	26	|
 |	Data Science	|	23	|
-|	HR	|	38	|
+|	HR	|	37	|
 |	Advocate	|	7	|
 |	Arts	|	8	|
-|	Web Designing	|	63	|
-|	Mechanical Engineer	|	45	|
-|	Sales	|	57	|
-|	Health and fitness	|	40	|
+|	Web Designing	|	60	|
+|	Mechanical Engineer	|	43	|
+|	Sales	|	54	|
+|	Health and fitness	|	39	|
 |	Civil Engineer	|	19	|
-|	Java Developer	|	42	|
 |	Business Analyst	|	15	|
-|	SAP Developer	|	56	|
+|	SAP Developer	|	53	|
 |	Automation Testing	|	9	|
 |	Electrical Engineering	|	31	|
-|	Operations Manager	|	49	|
-|	Python Developer	|	53	|
+|	Operations Manager	|	47	|
 |	DevOps Engineer	|	27	|
-|	Network Security Engineer	|	47	|
-|	PMO	|	50	|
+|	Network Security Engineer	|	45	|
+|	PMO	|	48	|
 |	Database	|	25	|
-|	Hadoop	|	39	|
+|	Hadoop	|	38	|
 |	ETL Developer	|	30	|
 |	DotNet Developer	|	28	|
 |	Blockchain	|	14	|
-|	Testing	|	62	|
-|	Frontend Developer	|	35	|
+|	Testing	|	59	|
 |	Backend Developer	|	13	|
 |	Data Scientist	|	24	|
-|	Full Stack Developer	|	36	|
-|	Mobile App Developer (iOS/Android)	|	46	|
-|	Machine Learning Engineer	|	44	|
+|	Full Stack Developer	|	35	|
+|	Mobile App Developer (iOS/Android)	|	44	|
+|	Machine Learning Engineer	|	42	|
 |	Cloud Engineer	|	20	|
 |	DESIGNER	|	21	|
-|	INFORMATION-TECHNOLOGY	|	41	|
-|	TEACHER	|	61	|
+|	INFORMATION-TECHNOLOGY	|	40	|
+|	TEACHER	|	58	|
 |	ADVOCATE	|	1	|
 |	BUSINESS-DEVELOPMENT	|	12	|
-|	HEALTHCARE	|	37	|
+|	HEALTHCARE	|	36	|
 |	FITNESS	|	33	|
 |	AGRICULTURE	|	2	|
 |	BPO	|	11	|
-|	SALES	|	55	|
+|	SALES	|	52	|
 |	CONSULTANT	|	18	|
 |	DIGITAL-MEDIA	|	22	|
 |	AUTOMOBILE	|	5	|
@@ -292,7 +287,7 @@ The in-depth features that are extracted from each resume are:
 |	ENGINEERING	|	29	|
 |	ACCOUNTANT	|	0	|
 |	CONSTRUCTION	|	17	|
-|	PUBLIC-RELATIONS	|	51	|
+|	PUBLIC-RELATIONS	|	49	|
 |	BANKING	|	10	|
 |	ARTS	|	4	|
 |	AVIATION	|	6	|
