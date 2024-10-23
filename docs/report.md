@@ -213,7 +213,85 @@ The in-depth features that are extracted from each resume are:
   * **Insights Generation**: The function counts the occurrences of filtered words and returns the most frequent ones, which can inform hiring decisions, identify trends in candidate skills, or enhance resume parsing systems.
 
 **Most frequent words obtained from entire dataset**
-![Most_freq_words_in_dataset](Pie_chart.png)
+
+![Most_freq_words_in_dataset](most_freq_words_in_df.png)
 
 **Most frequent words obtained from dataset with categories**
-![Most_freq_words_in_dataset_category](Pie_chart.png)
+
+![Most_freq_words_in_dataset_category](most_freq_words_in_df_category.png)
+
+* **Labelling the categories**
+  The process described involves converting categorical data into a numerical format suitable for machine learning models.
+  * **Categorical Data Conversion**: The *LabelEncoder* is used to transform string labels representing different categories into numerical labels. This is essential because many machine learning algorithms require numerical input.
+  * **Learning Unique Categories**: The method analyzes the unique categories present in the dataset, enabling it to understand how to assign numerical values to each category.
+  * **Generating Numeric Labels**: Each category is then replaced with a corresponding numeric label, creating a new representation of the data. This allows the model to process the categories effectively.
+
+**Labels for each category**
+
+|Category|Label|
+|--------|-----|
+|	Python_Developer	|	54	|
+|	Java_Developer	|	43	|
+|	Front_End_Developer	|	34	|
+|	Network_Administrator	|	48	|
+|	Project_manager	|	52	|
+|	Security_Analyst	|	58	|
+|	Software_Developer	|	59	|
+|	Systems_Administrator	|	60	|
+|	Web_Developer	|	64	|
+|	Database_Administrator	|	26	|
+|	Data Science	|	23	|
+|	HR	|	38	|
+|	Advocate	|	7	|
+|	Arts	|	8	|
+|	Web Designing	|	63	|
+|	Mechanical Engineer	|	45	|
+|	Sales	|	57	|
+|	Health and fitness	|	40	|
+|	Civil Engineer	|	19	|
+|	Java Developer	|	42	|
+|	Business Analyst	|	15	|
+|	SAP Developer	|	56	|
+|	Automation Testing	|	9	|
+|	Electrical Engineering	|	31	|
+|	Operations Manager	|	49	|
+|	Python Developer	|	53	|
+|	DevOps Engineer	|	27	|
+|	Network Security Engineer	|	47	|
+|	PMO	|	50	|
+|	Database	|	25	|
+|	Hadoop	|	39	|
+|	ETL Developer	|	30	|
+|	DotNet Developer	|	28	|
+|	Blockchain	|	14	|
+|	Testing	|	62	|
+|	Frontend Developer	|	35	|
+|	Backend Developer	|	13	|
+|	Data Scientist	|	24	|
+|	Full Stack Developer	|	36	|
+|	Mobile App Developer (iOS/Android)	|	46	|
+|	Machine Learning Engineer	|	44	|
+|	Cloud Engineer	|	20	|
+|	DESIGNER	|	21	|
+|	INFORMATION-TECHNOLOGY	|	41	|
+|	TEACHER	|	61	|
+|	ADVOCATE	|	1	|
+|	BUSINESS-DEVELOPMENT	|	12	|
+|	HEALTHCARE	|	37	|
+|	FITNESS	|	33	|
+|	AGRICULTURE	|	2	|
+|	BPO	|	11	|
+|	SALES	|	55	|
+|	CONSULTANT	|	18	|
+|	DIGITAL-MEDIA	|	22	|
+|	AUTOMOBILE	|	5	|
+|	CHEF	|	16	|
+|	FINANCE	|	32	|
+|	APPAREL	|	3	|
+|	ENGINEERING	|	29	|
+|	ACCOUNTANT	|	0	|
+|	CONSTRUCTION	|	17	|
+|	PUBLIC-RELATIONS	|	51	|
+|	BANKING	|	10	|
+|	ARTS	|	4	|
+|	AVIATION	|	6	|
