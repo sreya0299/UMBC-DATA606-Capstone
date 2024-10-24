@@ -280,14 +280,14 @@ The in-depth features that are extracted from each resume are:
 |	AVIATION	|	4	|
 
 * **Vectorization**
-* The **TF-IDF** Vectorizer (Term Frequency-Inverse Document Frequency) is a feature extraction tool from the Scikit-learn library that converts a collection of raw documents into a matrix of TF-IDF features. 
-1. **Term Frequency (TF)**: Indicates how frequently a term appears in a document.
-2. **Inverse Document Frequency (IDF)**: Reflects how important a term is across the entire corpus, assigning higher weights to rare terms and lower weights to common terms.
-* Extracts meaningful features from the text data contained within each resume.
-* Allows for the identification of key skills and qualifications by transforming the raw textual content into a numerical representation that highlights the importance of specific terms relative to the entire dataset.
-* Additionally, the TF-IDF scores help to filter out common words, ensuring that the analysis focuses on terms that provide significant insights into candidates' expertise. Ultimately, using the TF-IDF Vectorizer facilitates a more informed evaluation of resumes, supporting personalized job recommendations and improving the overall recruitment process.
+  * The **TF-IDF** Vectorizer (Term Frequency-Inverse Document Frequency) is a feature extraction tool from the Scikit-learn library that converts a collection of raw documents into a matrix of TF-IDF features. 
+    1. **Term Frequency (TF)**: Indicates how frequently a term appears in a document.
+    2. **Inverse Document Frequency (IDF)**: Reflects how important a term is across the entire corpus, assigning higher weights to rare terms and lower weights to common terms.
+  * Extracts meaningful features from the text data contained within each resume.
+  * Allows for the identification of key skills and qualifications by transforming the raw textual content into a numerical representation that highlights the importance of specific terms relative to the entire dataset.
+  * Additionally, the TF-IDF scores help to filter out common words, ensuring that the analysis focuses on terms that provide significant insights into candidates' expertise. Ultimately, using the TF-IDF Vectorizer facilitates a more informed evaluation of resumes, supporting personalized job recommendations and improving the overall recruitment process.
 
 * **Principal Component Analysis**
-* It is employed to reduce the dimensionality of the transformed TF-IDF matrix, which initially consists of a high number of features corresponding to the terms in the resumes.
-* By applying PCA and selecting 1,500 principal components, it can capture the most significant variance in the data while eliminating redundant features, which enhances the efficiency of subsequent analyses. This dimensionality reduction facilitates faster processing and improves the performance in skill extraction and resume matching.
-* The explained variance ratio(ECR) provides a measure of how much information is retained in the selected components, ensuring that the analysis focuses on the most informative aspects of the resumes.
+  * It is employed to reduce the dimensionality of the transformed TF-IDF matrix, which initially consists of a high number of features corresponding to the terms in the resumes.
+  * By applying PCA and selecting 1,500 principal components, it can capture the most significant variance in the data while eliminating redundant features, which enhances the efficiency of subsequent analyses. This dimensionality reduction facilitates faster processing and improves the performance in skill extraction and resume matching.
+  * The explained variance ratio(ECR) provides a measure of how much information is retained in the selected components, ensuring that the analysis focuses on the most informative aspects of the resumes.
