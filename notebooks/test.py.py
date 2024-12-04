@@ -23,7 +23,7 @@ model_files = {
     # "SVM (RBF)": "SVM_RBF.pkl",
     # "Naive Bayes": "Naive_Bayes.pkl",
     # "Random Forest": "Random_Forest.pkl",
-    "Decision Tree": "Decision_Tree.pkl"
+    "Decision Tree": "notebooks/Decision_Tree.pkl"
 }
 
 models = {}
