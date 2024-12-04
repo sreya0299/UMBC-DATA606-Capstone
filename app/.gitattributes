@@ -1,1 +1,4 @@
 SVM.RBF.pkl filter=lfs diff=lfs merge=lfs -text
+SVM_RBF.pkl filter=lfs diff=lfs merge=lfs -text
+SVM_Linear.pkl filter=lfs diff=lfs merge=lfs -text
+Naive_Bayes.pkl filter=lfs diff=lfs merge=lfs -text
