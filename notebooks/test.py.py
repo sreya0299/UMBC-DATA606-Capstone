@@ -13,7 +13,7 @@ import time  # For spinners
 import plotly.express as px  # For visualizations
 
 # NLTK setup
-# nltk.download('punkt')
+nltk.download('punkt_tab')
 nltk.download('stopwords')
 
 # Load Models and Preprocessing Tools
