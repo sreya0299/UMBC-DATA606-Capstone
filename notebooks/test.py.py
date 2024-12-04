@@ -15,6 +15,7 @@ import plotly.express as px  # For visualizations
 # NLTK setup
 nltk.download('punkt_tab')
 nltk.download('stopwords')
+nltk.download('averaged_perceptron_tagger_eng')
 
 # Load Models and Preprocessing Tools
 model_files = {
