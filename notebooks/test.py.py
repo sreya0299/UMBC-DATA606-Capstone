@@ -17,6 +17,8 @@ from sklearn.decomposition import PCA
 from nltk import pos_tag
 import time  # For spinners
 import plotly.express as px  # For visualizations
+import gzip
+
 
 # NLTK setup
 nltk.download('punkt')
@@ -32,10 +34,36 @@ model_files = {
     "Decision Tree": "Decision_Tree.pkl"
 }
 
+# Compress each model file
+for model_file in model_files:
+    with open(model_file, "rb") as f_in:
+        with gzip.open(model_file + ".gz", "wb") as f_out:
+            f_out.write(f_in.read())
+
+# List of compressed model files
+compressed_model_files = {
+    "Logistic Regression": "Logistic_Regression.pkl.gz",
+    "SVM (Linear)": "SVM_Linear.pkl.gz",
+    "SVM (RBF)": "SVM_RBF.pkl.gz",
+    "Naive Bayes": "Naive_Bayes.pkl.gz",
+    "Random Forest": "Random_Forest.pkl.gz",
+    "Decision Tree": "Decision_Tree.pkl.gz",
+    "TF-IDF Vectorizer": "tfidf.pkl.gz"
+}
+
+# Function to load compressed models
+def load_compressed_model(filename):
+    with gzip.open(filename, "rb") as f:
+        return pickle.load(f)
+
+# Load all models into a dictionary
 models = {}
-for name, filename in model_files.items():
-    with open(filename, "rb") as file:
-        models[name] = pickle.load(file)
+for model_name, file_name in compressed_model_files.items():
+    try:
+        models[model_name] = load_compressed_model(file_name)
+        print(f"Loaded {model_name} from {file_name}")
+    except Exception as e:
+        print(f"Error loading {model_name}: {e}")
 
 # Load TF-IDF model
 tfidf = pickle.load(open('tfidf.pkl', 'rb'))
