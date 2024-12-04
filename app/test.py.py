@@ -370,10 +370,10 @@ def main():
         </div>
         """, unsafe_allow_html=True
     )
-    # with st.expander("**Sample view**"):
-    #     st.markdown("### Preview of the Original Dataset")
-    #     dataset = pd.read_csv('data.csv')
-    #     st.write(dataset.head())
+    with st.expander("**Sample view**"):
+        st.markdown("### Preview of the Original Dataset")
+        dataset = pd.read_csv('data.csv')
+        st.write(dataset.head())
 
     st.subheader("Job Description")
     job_description = st.text_area("Paste the job description below:", height=200)
