@@ -25,17 +25,17 @@ nltk.download('averaged_perceptron_tagger_eng')
 
 # Load Models and Preprocessing Tools
 model_files = {
-    "Logistic Regression": "Logistic_Regression.pkl",
-    "SVM (Linear)": "SVM_Linear.pkl",
-    "SVM (RBF)": "SVM_RBF.pkl",
-    "Naive Bayes": "Naive_Bayes.pkl",
-    "Random Forest": "Random_Forest.pkl",
-    "Decision Tree": "Decision_Tree.pkl"
+    "Logistic Regression": "app/Logistic_Regression.pkl",
+    "SVM (Linear)": "app/SVM_Linear.pkl",
+    "SVM (RBF)": "app/SVM_RBF.pkl",
+    "Naive Bayes": "app/Naive_Bayes.pkl",
+    "Random Forest": "app/Random_Forest.pkl",
+    "Decision Tree": "app/Decision_Tree.pkl"
 }
 
 models = {}
 for name, filename in model_files.items():
-    with open(app/filename, "rb") as file:
+    with open(filename, "rb") as file:
         models[name] = pickle.load(file)
 
 # Load TF-IDF model
