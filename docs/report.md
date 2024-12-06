@@ -334,7 +334,12 @@ App is developed to streamline the process of resume screening and optimization.
 
 The link to access the application for uploading the resumes and analyzing them in accordance with job descriptions.
 * **Streamlit UI**: [Streamlit App](https://umbc-data606-capstone-khtcappnhvnslcitctn6dpm.streamlit.app/)
+## 7. Future Improvements
+In Future, the improvements that can be made in the app for the better User Interface and the analysis of the resumes, the following features can be taken into consideration.
+1. **Enhanced Skill Extraction**: Integration of more advanced NLP techniques like Named Entity Recognition (NER) to better identify job-specific skills.
+2. **Better Model Performance**: Experimenting with deep learning models to improve accuracy.
+3. **Job Role Prediction**: Extending the categorization to a larger set of job roles using more diverse training data.
 
-
-
+## 8. Conclusion
+The **Resume Insights and Optimization App** is an innovative solution for improving the efficiency of the recruitment process. It leverages machine learning and NLP to automate the analysis and optimization of resumes, helping candidates tailor their resumes to meet job requirements and enabling recruiters to make more informed decisions. By integrating various tools for skill extraction, job categorization, and data visualization, the app provides a comprehensive and user-friendly experience for resume analysis and optimization. The ability to handle multiple resume formats (PDF, DOCX, TXT) and evaluate various models for prediction provides a flexible solution for real-world applications. By incorporating this tool, companies can reduce manual efforts in resume evaluation and make more informed decisions in hiring, ultimately improving both recruitment efficiency and job fit. Future improvements can include integrating more advanced models, expanding the skill set database, and enhancing the overall user interface for better accessibility and performance.
 
