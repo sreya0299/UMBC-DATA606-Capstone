@@ -340,13 +340,13 @@ App is developed to streamline the process of resume screening and optimization.
 
 The visualizations of the job descriptions with the resume are provided below 
 * Bar Plot:
-  ![Bar_Plot](Bar_Plot.png)
+  * ![Bar_Plot](Bar_Plot.png)
  
 * Pie Plot:
-  ![Pie_Plot](Pie_Plot.png)
+  * ![Pie_Plot](Pie_Plot.png)
  
 * Polar Plot:
-  ![Polar_Plot](Polar_Plot.png)
+  * ![Polar_Plot](Polar_Plot.png)
   
 The link to access the application for uploading the resumes and analyzing them in accordance with job descriptions.
 * **Streamlit UI**: [Streamlit App](https://umbc-data606-capstone-khtcappnhvnslcitctn6dpm.streamlit.app/)
