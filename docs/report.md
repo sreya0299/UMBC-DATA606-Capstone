@@ -312,10 +312,12 @@ After evaluating all the models, the **SVM** with the **RBF kernel** emerged as 
 
 **Ensuring that SVM RBF is the best model**
 * **Confusion Matrix**
+  
     * To evaluate the performance of the SVM model with a rbf kernel on the resume categorization task. After predicting the labels for the test dataset using the trained model, the confusion_matrix function from sklearn.metrics computes the matrix, which compares the true labels *y_test* with the predicted labels *ypred*. The matrix is annotated with the *job roles* on both the x and y axes, making it easy to identify which job roles were correctly or incorrectly predicted. The color scale, set to *Viridis*, helps highlight areas of the matrix with higher values, indicating where the model performed well or poorly. This visualization allows for a clear understanding of how well the model classified each job role and identifies areas for improvement in classification performance.
    
 ![confusion_matrix](confusion_matrix.png)
 * **Scatter Plot**
+  
    * Scatter plot to visually compare the true and predicted values for the SVC model with the RBF kernel on the resume categorization task. The scatter plot is then generated using Plotly's *px.scatter*, with the true values plotted on the x-axis and the predicted values on the y-axis. This visualizes how close the model's predictions are to the actual values. The red dashed line is added to the plot to represent the "perfect prediction line" (y = x), where the true values perfectly match the predicted values. This line serves as a reference to easily identify how well the model's predictions align with the true labels. Points that lie on or near the red line indicate accurate predictions, while points far from the line highlight misclassifications. 
    
 ![Scatter_Plot](Scatter_Plot.png)
