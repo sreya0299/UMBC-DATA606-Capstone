@@ -33,6 +33,7 @@ model_files = {
     "Random Forest": "app/Random_Forest.pkl",
     "Decision Tree": "app/Decision_Tree.pkl"
     "SVM (RBF)": "app/SVM_RBF.pkl"
+}
 
 models = {}
 for name, filename in model_files.items():
