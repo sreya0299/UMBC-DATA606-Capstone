@@ -9,7 +9,7 @@
 * **Author Name**: Sreya Sree Siloju
 * **GitHub Repository**: [GitHub Repo](https://github.com/sreya0299)
 * **LinkedIn Profile**: [LinkedIn Profile](https://www.linkedin.com/in/sreya-sree-siloju-a29224149/)
-* **PowerPoint Presentation**: PowerPoint Presentation
+* **PowerPoint Presentation**: [Power Point Presentation](https://github.com/sreya0299/UMBC-DATA606-Capstone/blob/main/docs/RESUME%20INSIGHTS.pptx)
 * **YouTube Video**: YouTube Video
   
 ---
