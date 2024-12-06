@@ -287,7 +287,24 @@ The in-depth features that are extracted from each resume are:
   * Allows for the identification of key skills and qualifications by transforming the raw textual content into a numerical representation that highlights the importance of specific terms relative to the entire dataset.
   * Additionally, the TF-IDF scores help to filter out common words, ensuring that the analysis focuses on terms that provide significant insights into candidates' expertise. Ultimately, using the TF-IDF Vectorizer facilitates a more informed evaluation of resumes, supporting personalized job recommendations and improving the overall recruitment process.
 
-* **Principal Component Analysis**
-  * It is employed to reduce the dimensionality of the transformed TF-IDF matrix, which initially consists of a high number of features corresponding to the terms in the resumes.
-  * By applying PCA and selecting 1,500 principal components, it can capture the most significant variance in the data while eliminating redundant features, which enhances the efficiency of subsequent analyses. This dimensionality reduction facilitates faster processing and improves the performance in skill extraction and resume matching.
-  * The explained variance ratio(ECR) provides a measure of how much information is retained in the selected components, ensuring that the analysis focuses on the most informative aspects of the resumes.
+## 5. Model Development
+* The dataset was split into training and testing subsets to prepare it for machine learning tasks. The training set comprises 80% of the data (8,802 rows), while the testing set makes up the remaining 20% (2,201 rows). Each subset contains 85,373 features. The **train_test_split** function with the stratify parameter was used to ensure that class proportions in both subsets mirrored the original dataset, preventing bias or imbalance. Stratified sampling preserves class balance, ensures reliable model evaluation, and minimizes bias by maintaining consistent class distributions. 
+  1. The X_train contains contains 8802 rows and 85373 columns.
+  2. The y_train consists of 8802 rows.
+  3. The X_test consists of 2201 rows and 85373 columns.
+  4. The y_test consists of 2201 rows.
+
+ **Models used for training**
+ 1. **Logistic Regression**: **Logistic Regression** model was implemented using the **OneVsRestClassifier** to handle multi-class classification, with a maximum iteration limit of **1,000** to ensure convergence. The model was trained on the training dataset *(X_train, y_train)* and used to predict categories for the testing dataset *X_test*. The accuracy of the predictions was evaluated using the **accuracy score** metric, achieved an accuracy of **0.821**, demonstrating its effectiveness in multi-class classification tasks and its balanced performance across different categories.
+ 2. **Support Vector Machine**: **Support Vector Machine** is a supervised learning model used for classification tasks, works by finding the optimal hyperplane that separates data points of different classes. SVMs can utilize different kernel functions, such as **linear** and **radial basis function (RBF)**, to map data into higher-dimensional spaces for better classification.
+    a. **Linear**: The SVM classifier was implemented using the *OneVsRestClassifier* wrapper with an SVM configured to use a *linear kernel*. This kernel is effective when the data is linearly separable, allowing the model to classify data by finding a straight decision boundary. The linear kernel excelled in cases where data was linearly separable, achieving an accuracy of **0.8441**.
+    b. **RBF**: The SVM classifier was implemented with an **RBF (Radial Basis Function)** kernel, which is well-suited for handling non-linear data. This kernel maps the data into a higher-dimensional space, enabling the separation of complex class boundaries. The RBF kernel handled non-linear patterns effectively, achieving an accuracy of **0.8442**.
+3. **Naive Bayes**: **Naive Bayes model** was implemented using the **MultinomialNB classifier** wrapped in a **OneVsRestClassifier** to handle multi-class classification tasks. This model is particularly suited for data represented by frequency counts or probabilities, as it assumes conditional independence between features given the class. The model's performance was evaluated using the accuracy score, achieving an accuracy of **0.567**.
+4. **Random Forest Classifier**: **Random Forest model** was implemented using the **RandomForestClassifier** wrapped in a **OneVsRestClassifier** to handle multi-class classification tasks. Configured with 50 estimators and a fixed random state for reproducibility, the model leverages an ensemble of decision trees to enhance prediction accuracy and reduce overfitting. The model's accuracy, evaluated using the accuracy score metric, was found to be **0.76**, demonstrating its robustness in handling large and complex datasets while maintaining generalization across different classes.
+5. **Decision Tree Classifier**: **Decision Tree model** was implemented using the **DecisionTreeClassifier** wrapped in a **OneVsRestClassifier** for multi-class classification. Configured with a fixed random state for reproducibility, the model builds a tree structure to partition the data based on feature values, effectively learning class boundaries. The model's performance, evaluated using the accuracy score metric, achieved an accuracy of **0.71**, showcasing its ability to handle classification tasks with interpretable and straightforward decision-making processes.
+
+**Metric Evaluation**
+![Accuarcies produced by machine learning models](accuarcies.png)
+
+
+
