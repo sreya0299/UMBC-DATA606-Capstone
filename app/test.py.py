@@ -35,11 +35,11 @@ model_files = {
 
 models = {}
 for name, filename in model_files.items():
-    with open(filename, "rb") as file:
+    with open(app/filename, "rb") as file:
         models[name] = pickle.load(file)
 
 # Load TF-IDF model
-tfidf = pickle.load(open('tfidf.pkl', 'rb'))
+tfidf = pickle.load(open('app/tfidf.pkl', 'rb'))
 
 
 # List of predefined skills
