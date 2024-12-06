@@ -316,3 +316,18 @@ After evaluating all the models, the **SVM** with the **RBF kernel** emerged as 
 2. **Scatter Plot**: Scatter plot to visually compare the true and predicted values for the SVC model with the RBF kernel on the resume categorization task. The scatter plot is then generated using Plotly's *px.scatter*, with the true values plotted on the x-axis and the predicted values on the y-axis. This visualizes how close the model's predictions are to the actual values. The red dashed line is added to the plot to represent the "perfect prediction line" (y = x), where the true values perfectly match the predicted values. This line serves as a reference to easily identify how well the model's predictions align with the true labels. Points that lie on or near the red line indicate accurate predictions, while points far from the line highlight misclassifications. 
    
 ![Scatter_Plot](Scatter_Plot.png)
+
+## 6. Streamlit Implementation
+App is developed to streamline the process of resume screening and optimization. The application leverages machine learning models, Natural Language Processing (NLP), and data visualization techniques to analyze resumes and match them with job descriptions, highlighting key skills and categorizing the resumes for specific job roles. The machine learning model is serialized using pickle and can be easily loaded to make predictions on new resumes. The text data from the resumes is preprocessed using TF-IDF (Term Frequency-Inverse Document Frequency) to transform the text data into numerical vectors for model input. This vectorized representation helps the machine learning models analyze the text and make predictions effectively.
+1. **Skill Extraction and Matching** : The application can extract specific skills from the resumes and job descriptions using NLP techniques. It compares the skill sets listed in the job description with the ones mentioned in the resume. The common skills between the two are identified, and the match percentage is calculated, indicating how well the resume aligns with the job description.
+2. **Visualization of Results**: The app uses Plotly to create several interactive visualizations to provide a deeper insight into the results 
+  1. **Bar Charts**: Visualizing the number of skills in the resume, the job description, and the common skills.
+  2. **Pie Charts**: Breaking down the matched and unmatched skills.
+  3. **Polar Charts**: Offering a visual comparison of the skills in the resume and job description.
+3. **Job Role Categorization**: This categorizes the resume into one of several predefined job roles, using the predictions from the machine learning models. The categories are mapped to a set of predefined job titles (e.g., Python Developer, Data Scientist, Project Manager). These predictions provide an initial classification of the resume, helping job seekers or recruiters quickly identify potential matches for specific job roles.
+4. **Skill Matching and Recommendations**: After categorizing the resume, the app evaluates the skill match between the resume and the job description. This provides actionable insights on what skills are missing or need further emphasis. If the skills in the resume do not align with the job requirements, the app recommends adding relevant skills that are important for the role.
+5. **User Interface and Experience**: The app is designed with Streamlit, offering an intuitive and easy-to-use interface. Users can upload resumes in various formats (PDF, DOCX, TXT), input job descriptions. The results are displayed in a clear and engaging manner, with visual charts and tables summarizing the analysis.
+
+
+
+
