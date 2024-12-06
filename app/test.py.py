@@ -23,10 +23,16 @@ nltk.download('punkt_tab')
 nltk.download('stopwords')
 nltk.download('averaged_perceptron_tagger_eng')
 
+
 # Load Models and Preprocessing Tools
 model_files = {
+    "Logistic Regression": "app/Logistic_Regression.pkl",
+    "SVM (Linear)": "app/SVM_Linear.pkl",
     "SVM (RBF)": "app/SVM_RBF.pkl",
-  }
+    "Naive Bayes": "app/Naive_Bayes.pkl",
+    "Random Forest": "app/Random_Forest.pkl",
+    "Decision Tree": "app/Decision_Tree.pkl"
+    "SVM (RBF)": "app/SVM_RBF.pkl"
 
 models = {}
 for name, filename in model_files.items():
