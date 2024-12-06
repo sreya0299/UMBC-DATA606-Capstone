@@ -286,7 +286,7 @@ The in-depth features that are extracted from each resume are:
   * Extracts meaningful features from the text data contained within each resume.
   * Allows for the identification of key skills and qualifications by transforming the raw textual content into a numerical representation that highlights the importance of specific terms relative to the entire dataset.
   * Additionally, the TF-IDF scores help to filter out common words, ensuring that the analysis focuses on terms that provide significant insights into candidates' expertise. Ultimately, using the TF-IDF Vectorizer facilitates a more informed evaluation of resumes, supporting personalized job recommendations and improving the overall recruitment process.
-
+---
 ## 5. Model Development
 The dataset was split into training and testing subsets to prepare it for machine learning tasks. The training set comprises 80% of the data (8,802 rows), while the testing set makes up the remaining 20% (2,201 rows). Each subset contains 85,373 features. The **train_test_split** function with the stratify parameter was used to ensure that class proportions in both subsets mirrored the original dataset, preventing bias or imbalance. Stratified sampling preserves class balance, ensures reliable model evaluation, and minimizes bias by maintaining consistent class distributions. 
   1. The X_train contains contains 8802 rows and 85373 columns.
@@ -316,7 +316,7 @@ After evaluating all the models, the **SVM** with the **RBF kernel** emerged as 
 2. **Scatter Plot**: Scatter plot to visually compare the true and predicted values for the SVC model with the RBF kernel on the resume categorization task. The scatter plot is then generated using Plotly's *px.scatter*, with the true values plotted on the x-axis and the predicted values on the y-axis. This visualizes how close the model's predictions are to the actual values. The red dashed line is added to the plot to represent the "perfect prediction line" (y = x), where the true values perfectly match the predicted values. This line serves as a reference to easily identify how well the model's predictions align with the true labels. Points that lie on or near the red line indicate accurate predictions, while points far from the line highlight misclassifications. 
    
 ![Scatter_Plot](Scatter_Plot.png)
-
+---
 ## 6. Streamlit Implementation
 App is developed to streamline the process of resume screening and optimization. The application leverages machine learning models, Natural Language Processing (NLP), and data visualization techniques to analyze resumes and match them with job descriptions, highlighting key skills and categorizing the resumes for specific job roles. The machine learning model is serialized using pickle and can be easily loaded to make predictions on new resumes. The text data from the resumes is preprocessed using TF-IDF (Term Frequency-Inverse Document Frequency) to transform the text data into numerical vectors for model input. This vectorized representation helps the machine learning models analyze the text and make predictions effectively.
 1. **Skill Extraction and Matching** : The application can extract specific skills from the resumes and job descriptions using NLP techniques. It compares the skill sets listed in the job description with the ones mentioned in the resume. The common skills between the two are identified, and the match percentage is calculated, indicating how well the resume aligns with the job description.
@@ -334,12 +334,13 @@ App is developed to streamline the process of resume screening and optimization.
 
 The link to access the application for uploading the resumes and analyzing them in accordance with job descriptions.
 * **Streamlit UI**: [Streamlit App](https://umbc-data606-capstone-khtcappnhvnslcitctn6dpm.streamlit.app/)
+---
 ## 7. Future Improvements
 In Future, the improvements that can be made in the app for the better User Interface and the analysis of the resumes, the following features can be taken into consideration.
 1. **Enhanced Skill Extraction**: Integration of more advanced NLP techniques like Named Entity Recognition (NER) to better identify job-specific skills.
 2. **Better Model Performance**: Experimenting with deep learning models to improve accuracy.
 3. **Job Role Prediction**: Extending the categorization to a larger set of job roles using more diverse training data.
-
+---
 ## 8. Conclusion
 The **Resume Insights and Optimization App** is an innovative solution for improving the efficiency of the recruitment process. It leverages machine learning and NLP to automate the analysis and optimization of resumes, helping candidates tailor their resumes to meet job requirements and enabling recruiters to make more informed decisions. By integrating various tools for skill extraction, job categorization, and data visualization, the app provides a comprehensive and user-friendly experience for resume analysis and optimization. The ability to handle multiple resume formats (PDF, DOCX, TXT) and evaluate various models for prediction provides a flexible solution for real-world applications. By incorporating this tool, companies can reduce manual efforts in resume evaluation and make more informed decisions in hiring, ultimately improving both recruitment efficiency and job fit. Future improvements can include integrating more advanced models, expanding the skill set database, and enhancing the overall user interface for better accessibility and performance.
 
