@@ -304,7 +304,7 @@ The dataset was split into training and testing subsets to prepare it for machin
 5. **Decision Tree Classifier**: **Decision Tree model** was implemented using the **DecisionTreeClassifier** wrapped in a **OneVsRestClassifier** for multi-class classification. Configured with a fixed random state for reproducibility, the model builds a tree structure to partition the data based on feature values, effectively learning class boundaries. The model's performance, evaluated using the accuracy score metric, achieved an accuracy of **0.71**, showcasing its ability to handle classification tasks with interpretable and straightforward decision-making processes.
 
 **Metric Evaluation**
-![accuarcies](accuarcies.png)
+![Accuarcies obtained by machine learning models](accuracies.png)
 
 
 
