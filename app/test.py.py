@@ -379,7 +379,7 @@ def main():
     )
     with st.expander("**Sample view**"):
         st.markdown("### Preview of the Original Dataset")
-        dataset = pd.read_csv('data.csv')
+        dataset = pd.read_csv('app/data.csv')
         st.write(dataset.head())
 
     st.subheader("Job Description")
