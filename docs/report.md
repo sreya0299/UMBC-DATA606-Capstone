@@ -304,7 +304,16 @@ The dataset was split into training and testing subsets to prepare it for machin
 5. **Decision Tree Classifier**: **Decision Tree model** was implemented using the **DecisionTreeClassifier** wrapped in a **OneVsRestClassifier** for multi-class classification. Configured with a fixed random state for reproducibility, the model builds a tree structure to partition the data based on feature values, effectively learning class boundaries. The model's performance, evaluated using the accuracy score metric, achieved an accuracy of **0.71**, showcasing its ability to handle classification tasks with interpretable and straightforward decision-making processes.
 
 **Metric Evaluation**
+
 ![Accuarcies obtained by machine learning models](accuracies.png)
 
+After evaluating all the models, the **SVM** with the **RBF kernel** emerged as the best model with an accuracy of **0.8442**. This model demonstrated exceptional performance by effectively capturing the complex relationships in the data, handling non-linear patterns, and providing accurate categorizations for resume classification. Given its superior accuracy and ability to deal with non-linear decision boundaries, the SVM with RBF kernel was chosen for the further categorization of resumes, ensuring high-quality predictions for job role classification.
 
+**Ensuring that SVM RBF is the best model**
+1. **Confusion Matrix**: To evaluate the performance of the SVM model with a rbf kernel on the resume categorization task. After predicting the labels for the test dataset using the trained model, the confusion_matrix function from sklearn.metrics computes the matrix, which compares the true labels *y_test* with the predicted labels *ypred*. The matrix is annotated with the *job roles* on both the x and y axes, making it easy to identify which job roles were correctly or incorrectly predicted. The color scale, set to *Viridis*, helps highlight areas of the matrix with higher values, indicating where the model performed well or poorly. This visualization allows for a clear understanding of how well the model classified each job role and identifies areas for improvement in classification performance.
+   
+![confusion matrix](confusion matrix.png)
 
+2. **Scatter Plot**: Scatter plot to visually compare the true and predicted values for the SVC model with the RBF kernel on the resume categorization task. The scatter plot is then generated using Plotly's *px.scatter*, with the true values plotted on the x-axis and the predicted values on the y-axis. This visualizes how close the model's predictions are to the actual values. The red dashed line is added to the plot to represent the "perfect prediction line" (y = x), where the true values perfectly match the predicted values. This line serves as a reference to easily identify how well the model's predictions align with the true labels. Points that lie on or near the red line indicate accurate predictions, while points far from the line highlight misclassifications. 
+   
+![Scatter Plot](Scatter Plot.png)
