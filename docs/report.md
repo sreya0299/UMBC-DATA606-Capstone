@@ -332,6 +332,9 @@ App is developed to streamline the process of resume screening and optimization.
 
 ![resume_insights](resume_insights.png)
 
+The link to access the application for uploading the resumes and analyzing them in accordance with job descriptions.
+**Streamlit UI**: [Streamlit App](https://umbc-data606-capstone-khtcappnhvnslcitctn6dpm.streamlit.app/)
+
 
 
 
