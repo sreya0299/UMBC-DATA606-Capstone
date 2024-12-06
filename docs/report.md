@@ -328,6 +328,9 @@ App is developed to streamline the process of resume screening and optimization.
 4. **Skill Matching and Recommendations**: After categorizing the resume, the app evaluates the skill match between the resume and the job description. This provides actionable insights on what skills are missing or need further emphasis. If the skills in the resume do not align with the job requirements, the app recommends adding relevant skills that are important for the role.
 5. **User Interface and Experience**: The app is designed with Streamlit, offering an intuitive and easy-to-use interface. Users can upload resumes in various formats (PDF, DOCX, TXT), input job descriptions. The results are displayed in a clear and engaging manner, with visual charts and tables summarizing the analysis.
 
+**UI of the streamlit application**
+![resume_insights](resume_insights.png)
+
 
 
 
