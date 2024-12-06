@@ -25,7 +25,7 @@ nltk.download('averaged_perceptron_tagger_eng')
 
 # Load Models and Preprocessing Tools
 model_files = {
-    "SVM (RBF)": "SVM_RBF.pkl",
+    "SVM (RBF)": "app/SVM_RBF.pkl",
   }
 
 models = {}
@@ -34,7 +34,7 @@ for name, filename in model_files.items():
         models[name] = pickle.load(file)
 
 # Load TF-IDF model
-tfidf = pickle.load(open('tfidf.pkl', 'rb'))
+tfidf = pickle.load(open('app/tfidf.pkl', 'rb'))
 
 
 # List of predefined skills
