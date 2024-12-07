@@ -26,12 +26,12 @@ nltk.download('averaged_perceptron_tagger_eng')
 
 # Load Models and Preprocessing Tools
 model_files = {
-    "Logistic Regression": "app/Logistic_Regression.pkl",
-    "SVM (Linear)": "app/SVM_Linear.pkl",
-    "SVM (RBF)": "app/SVM_RBF.pkl",
-    "Naive Bayes": "app/Naive_Bayes.pkl",
-    "Random Forest": "app/Random_Forest.pkl",
-    "Decision Tree": "app/Decision_Tree.pkl"
+    "Logistic Regression": "Logistic_Regression.pkl",
+    "SVM (Linear)": "SVM_Linear.pkl",
+    "SVM (RBF)": "SVM_RBF.pkl",
+    "Naive Bayes": "Naive_Bayes.pkl",
+    "Random Forest": "Random_Forest.pkl",
+    "Decision Tree": "Decision_Tree.pkl"
 }
 
 models = {}
@@ -40,7 +40,7 @@ for name, filename in model_files.items():
         models[name] = pickle.load(file)
 
 # Load TF-IDF model
-tfidf = pickle.load(open('app/tfidf.pkl', 'rb'))
+tfidf = pickle.load(open('tfidf.pkl', 'rb'))
 
 
 # List of predefined skills
@@ -380,7 +380,7 @@ def main():
     )
     with st.expander("**Sample view**"):
         st.markdown("### Preview of the Original Dataset")
-        dataset = pd.read_csv('data/data.csv')
+        dataset = pd.read_csv('data.csv')
         st.write(dataset.head())
 
     st.subheader("Job Description")
@@ -506,257 +506,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-# In[ ]:
-
-
-# #!/usr/bin/env python
-# # coding: utf-8
-
-# # In[ ]:
-
-
-# import streamlit as st
-# import pickle
-# import re
-# import nltk
-# import pandas as pd
-# from PyPDF2 import PdfReader
-# from docx import Document
-# from nltk.corpus import stopwords
-# from nltk.tokenize import word_tokenize
-# from sklearn.decomposition import PCA
-# from nltk import pos_tag
-# import time  # For spinners
-# import plotly.express as px  # For visualizations
-# import gzip
-
-
-# # NLTK setup
-# nltk.download('punkt')
-# nltk.download('stopwords')
-# nltk.download('averaged_perceptron_tagger_eng')
-
-# # Load Models and Preprocessing Tools
-# model_files = {
-     
-#     "SVM (RBF)": "SVM_RBF.pkl",
-# }
-
-# # Load TF-IDF model
-# tfidf = pickle.load(open('tfidf.pkl', 'rb'))
-
-
-# # List of predefined skills
-# skills =  [
-#         "Python", "Django", "Flask", "FastAPI", "Object-Oriented Programming (OOP)",
-#         "SQL", "NoSQL (e.g., MongoDB)", "Data Structures & Algorithms",
-#         "RESTful APIs", "GraphQL", "Unit Testing", "Pytest",
-#         "Git", "Version Control", "Cloud Services (AWS, Azure, GCP)",
-#         "Docker", "Kubernetes", "Data Analysis", "Pandas", "NumPy"
-#  ]
-
-
-# # Map prediction to category name
-# category_mapping = {
-#     47: 'Python Developer', 37: 'Java Developer', 
-#     30: 'Front End Developer', 42: 'Network_Administrator', 
-#     46: 'Project_manager', 41: 'Network Security Engineer',
-#     50: 'Software_Developer', 51: 'Systems_Administrator', 
-#     54: 'Web Developer', 23: 'Database_Administrator', 
-#     21: 'Data Science', 33: 'HR', 5: 'Advocate', 
-#     6: 'Arts', 39: 'Mechanical Engineer', 
-#     49: 'Sales', 35: 'Health and fitness', 
-#     17: 'Civil Engineer', 13: 'Business Analyst', 
-#     48: 'SAP Developer', 7: 'Automation Testing', 
-#     28: 'Electrical Engineering', 43: 'Operations Manager', 
-#     24: 'DevOps Engineer', 44: 'PMO', 
-#     22: 'Database', 34: 'Hadoop', 
-#     27: 'ETL Developer', 25: 'DotNet Developer', 
-#     12: 'Blockchain', 53: 'Testing', 
-#     11: 'Backend Developer', 31: 'Full Stack Developer', 
-#     40: 'Mobile App Developer (iOS/Android)', 38: 'Machine Learning Engineer', 
-#     18: 'Cloud Engineer', 19: 'DESIGNER', 
-#     36: 'INFORMATION-TECHNOLOGY', 52: 'TEACHER', 
-#     10: 'BUSINESS-DEVELOPMENT', 32: 'HEALTHCARE', 
-#     1: 'AGRICULTURE', 9: 'BPO', 16: 'CONSULTANT', 
-#     20: 'DIGITAL-MEDIA', 3: 'AUTOMOBILE', 
-#     14: 'CHEF', 29: 'FINANCE', 
-#     2: 'APPAREL', 26: 'ENGINEERING', 
-#     0: 'ACCOUNTANT', 15: 'CONSTRUCTION', 
-#     45: 'PUBLIC-RELATIONS', 8: 'BANKING', 4: 'AVIATION'
-# }
-
-
-# # Utility Functions
-# def clean_resume(resume_text):
-#     clean_text = re.sub('http\S+\s*', ' ', resume_text)
-#     clean_text = re.sub('RT|cc', ' ', clean_text)
-#     clean_text = re.sub('#\S+', '', clean_text)
-#     clean_text = re.sub('@\S+', '  ', clean_text)
-#     clean_text = re.sub('[%s]' % re.escape("""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""), ' ', clean_text)
-#     clean_text = re.sub(r'[^\x00-\x7f]', r' ', clean_text)
-#     clean_text = re.sub('\s+', ' ', clean_text)
-#     return clean_text
-
-
-# def extract_text_from_pdf(pdf_file):
-#     pdf_reader = PdfReader(pdf_file)
-#     return "".join(page.extract_text() for page in pdf_reader.pages)
-
-# def extract_text_from_docx(docx_file):
-#     doc = Document(docx_file)
-#     return "\n".join(paragraph.text for paragraph in doc.paragraphs)
-
-# def extract_skills(text, job_skills):
-#     tokens = word_tokenize(text)
-#     return set(word for word, tag in pos_tag(tokens) if word in job_skills)
-
-# # App Layout
-# st.set_page_config(page_title="Resume Screening App", layout="wide")
-
-# # Sidebar
-# st.sidebar.title("Options")
-# selected_models = st.sidebar.multiselect("Select Models:", list(models.keys()))
-
-
-# # App Main
-# def main():
-#     st.markdown(
-#         """
-#         <div style="background-color:#f9f9f9; padding:8px; border-radius:8px;">
-#             <h1 style="color:#2c3e50; text-align:center;">📄 Resume Insights and Optimization App</h1>
-#             <p style="text-align:center; font-size:16px;">Upload resumes, match skills, and tailor the resume!</p>
-#         </div>
-#         """, unsafe_allow_html=True
-#     )
-#     with st.expander("**Sample view**"):
-#         st.markdown("### Preview of the Original Dataset")
-#         dataset = pd.read_csv('data.csv')
-#         st.write(dataset.head())
-
-#     st.subheader("Job Description")
-#     job_description = st.text_area("Paste the job description below:", height=200)
-
-#     st.subheader("Upload Resume")
-#     uploaded_file = st.file_uploader("Upload a resume (PDF, DOCX, TXT):", type=["pdf", "docx", "txt"])
-
-#     # Handle Resume Upload
-#     if uploaded_file is not None:
-#         with st.spinner("Processing resume..."):
-#             time.sleep(2)  # Simulate processing time
-
-#             if uploaded_file.type == "application/pdf":
-#                 resume_text = extract_text_from_pdf(uploaded_file)
-#             elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-#                 resume_text = extract_text_from_docx(uploaded_file)
-#             else:
-#                 resume_text = uploaded_file.read().decode("utf-8")
-
-#             cleaned_resume = clean_resume(resume_text)
-#             input_features = tfidf.transform([cleaned_resume])
-#             st.success("Resume processed successfully!")
-
-#         # Predict Job Role
-#         if st.button("Categorize"):
-#             st.markdown("### Predictions:")
-#             results = {model: models[model].predict(input_features)[0] for model in selected_models}
-#             for model_name, category_id in results.items():
-#                 st.markdown(
-#     f"""
-#     <div style="text-align: left; background-color: #f9f9f9; padding: 10px; border-radius: 8px; margin-bottom: 10px;">
-#         <p style="font-size:18px; margin: 0;">The model used is {model_name}</p>
-#         <p style="font-size:18px; color: #2c3e50; margin: 0;">The predicted category is {category_mapping.get(category_id, "Unknown")}</p>
-#     </div>
-#     """,
-#     unsafe_allow_html=True
-# )
-#             # Skill Matching
-#             resume_skills = extract_skills(cleaned_resume, skills)
-#             job_skills = extract_skills(job_description, skills)
-#             common_skills = resume_skills.intersection(job_skills)
-#             match_percentage = len(common_skills) / len(job_skills) * 100 if job_skills else 0
-
-#             # Visualization
-#             skill_match_fig = px.bar(
-#                 x=["Resume Skills", "Job Description Skills", "Matched Skills"],
-#                 y=[len(resume_skills), len(job_skills), len(common_skills)],
-#                 color=["Resume", "Job Description", "Matched"],
-#                 title="Skill Matching Overview"
-#             )
-            
-#             # Additional Visualization: Pie Chart
-#             pie_chart_fig = px.pie(
-#                 values=[len(common_skills), len(job_skills) - len(common_skills)],
-#                 names=["Matched Skills", "Unmatched Skills"],
-#                 title="Skill Match Breakdown",
-#                 color_discrete_sequence=px.colors.sequential.RdBu
-#             )
-
-#             # Additional Visualization: Heatmap or Radar Chart (if applicable)
-#             radar_fig = px.bar_polar(
-#                 r=[len(resume_skills), len(job_skills), len(common_skills)],
-#                 theta=["Resume Skills", "Job Description Skills", "Matched Skills"],
-#                 color=["Resume", "Job Description", "Matched"],
-#                 title="Skills Overview (Polar Chart)"
-#             )
-            
-#             skill_data = pd.DataFrame({
-#                         "Category": ["Resume Skills", "Job Description Skills", "Matched Skills"],
-#                         "Count": [len(resume_skills), len(job_skills), len(common_skills)]
-#                     })
-            
-#             # Skill Match Table
-#             st.dataframe(skill_data)
-
-#             # Expandable job skills
-#             with st.expander("**View Job Skills**"):
-#                 st.write("**Job Skills:**")
-#                 if job_skills:
-#                     for skill in sorted(job_skills):
-#                         st.markdown(f"- {skill}")
-#                 else:
-#                     st.write("No skills detected in the job description.")
-
-#             # Expandable resume skills
-#             with st.expander("**View Resume Skills**"):
-#                 st.write("**Resume Skills:**")
-#                 if resume_skills:
-#                     for skill in sorted(resume_skills):
-#                         st.markdown(f"- {skill}")
-#                 else:
-#                     st.write("No skills detected in the resume.")
-
-#             # Expandable matched skills
-#             with st.expander("**View Common Skills**"):
-#                 st.write("**Common skills in both:**")
-#                 if common_skills:
-#                     for skill in sorted(common_skills):
-#                         st.markdown(f"- {skill}")
-#                 else:
-#                     st.write("No matched skills.")
-
-#             # Expandable unmatched skills
-#             with st.expander("**View Unmatched Skills**"):
-#                 unmatched_skills = job_skills - resume_skills
-#                 st.write("**Skills to be added:**")
-#                 if unmatched_skills:
-#                     for skill in sorted(unmatched_skills):
-#                         st.markdown(f"- {skill}")
-#                 else:
-#                     st.write("All job description skills are matched.")
-                
-#             # Add Pie Chart and Polar Chart
-#             st.plotly_chart(skill_match_fig.update_layout(showlegend=False))
-#             st.plotly_chart(pie_chart_fig)
-#             st.plotly_chart(radar_fig)
-
-#             # Display skill matching results
-#             st.write(f"**Skill Match Percentage:** {match_percentage:.2f}%")
-#         else:
-#             st.write("**Please select at least one model.**")
-
-# if __name__ == "__main__":
-#     main()
 
