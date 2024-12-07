@@ -6,7 +6,7 @@
 
 * **Project Title**: Resume Insights and Optimization
 * **Author Name**: Sreya Sree Siloju
-* **Semester**: Fall'24
+* **Semester**: FALL'24
 * **Prepared for**: UMBC Data Science Master Degree Capstone by Dr. Chaojie (Jay) Wang
 * **GitHub Repository**: [GitHub Repo](https://github.com/sreya0299)
 * **LinkedIn Profile**: [LinkedIn Profile](https://www.linkedin.com/in/sreya-sree-siloju-a29224149/)
